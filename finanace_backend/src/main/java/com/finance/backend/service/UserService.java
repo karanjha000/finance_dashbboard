@@ -29,10 +29,11 @@ public class UserService {
                 .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
                 return authService.mapToResponse(user);
     }
-    public UserResponse updateUserRole(Long id, RegisterRequest request){
+    public UserResponse updateUserRole(Long id, RegisterRequest request) {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
-                return authService.mapToResponse(userRepository.save(user));
+        user.setRole(request.getRole());
+        return authService.mapToResponse(userRepository.save(user));
     }
     public UserResponse toggleUserStatus(Long id){
         User user = userRepository.findById(id)

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/finanace_backend.iml" filepath="$PROJECT_DIR$/.idea/finanace_backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finanace_backend/finanace_backend.iml" filepath="$PROJECT_DIR$/finanace_backend/finanace_backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/finanace_dashboard.iml" filepath="$PROJECT_DIR$/.idea/finanace_dashboard.iml" />
     </modules>
   </component>
 </project>

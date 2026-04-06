@@ -25,12 +25,12 @@ public class DashboardController {
         return ResponseEntity.ok(dashboardService.getSummary());
     }
     @GetMapping("/income")
-    @PreAuthorize("hasAnyRole('ADMIN', 'ANALYST')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'ANALYST', 'VIEWER')")
     public ResponseEntity<BigDecimal> getTotalIncome(){
         return ResponseEntity.ok(dashboardService.getTotalIncome());
     }
     @GetMapping("/expenses")
-    @PreAuthorize("hasAnyRole('ADMIN', 'ANALYST')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'ANALYST', 'VIEWER')")
     public ResponseEntity<BigDecimal> getTotalExpenses(){
         return ResponseEntity.ok(dashboardService.getTotalExpenses());
     }
@@ -40,12 +40,12 @@ public class DashboardController {
         return ResponseEntity.ok(dashboardService.getNetBalance());
     }
     @GetMapping("/trends/monthly")
-    @PreAuthorize("hasAnyRole('ADMIN', 'ANALYST')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'ANALYST', 'VIEWER')")
     public ResponseEntity<Map<String, BigDecimal>> getMonthlyTrends(){
         return ResponseEntity.ok(dashboardService.getMonthlyTrends());
     }
     @GetMapping("/trends/category")
-    @PreAuthorize("hasAnyRole('ADMIN', 'ANALYST')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'ANALYST', 'VIEWER')")
     public ResponseEntity<Map<String, BigDecimal>> getCategoryTotals(){
         return ResponseEntity.ok(dashboardService.getCategoryWiseTotals());
     }
